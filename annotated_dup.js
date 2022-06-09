@@ -25,6 +25,8 @@ var annotated_dup =
     [ "Si4431", "class_si4431.html", "class_si4431" ],
     [ "Si4432", "class_si4432.html", "class_si4432" ],
     [ "Si443x", "class_si443x.html", "class_si443x" ],
+    [ "SPIClass", "class_s_p_i_class.html", "class_s_p_i_class" ],
+    [ "SPISettings", "class_s_p_i_settings.html", "class_s_p_i_settings" ],
     [ "SSTVClient", "class_s_s_t_v_client.html", "class_s_s_t_v_client" ],
     [ "SSTVMode_t", "struct_s_s_t_v_mode__t.html", "struct_s_s_t_v_mode__t" ],
     [ "SX1231", "class_s_x1231.html", "class_s_x1231" ],

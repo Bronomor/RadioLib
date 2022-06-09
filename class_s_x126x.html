@@ -128,6 +128,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aab18364237ddac0c56aeaf63f08cf009"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_x126x.html#aab18364237ddac0c56aeaf63f08cf009">transmit</a> (uint8_t *data, size_t len, uint8_t addr=0) override</td></tr>
 <tr class="memdesc:aab18364237ddac0c56aeaf63f08cf009"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocking binary transmit method. Overloads for string-based transmissions are implemented in <a class="el" href="class_physical_layer.html" title="Provides common interface for protocols that run on LoRa/FSK modules, such as RTTY or LoRaWAN....">PhysicalLayer</a>.  <a href="class_s_x126x.html#aab18364237ddac0c56aeaf63f08cf009">More...</a><br /></td></tr>
 <tr class="separator:aab18364237ddac0c56aeaf63f08cf009"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac631d4d772ab13f32a5a55a1d9585d89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_x126x.html#ac631d4d772ab13f32a5a55a1d9585d89">holdTransmissionUntil</a> (uint32_t timestampMicros)</td></tr>
+<tr class="memdesc:ac631d4d772ab13f32a5a55a1d9585d89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delays an RF transmission until a specific timestamp in microsenconds has been reached. The method has to be called before for every transmission.  <a href="class_s_x126x.html#ac631d4d772ab13f32a5a55a1d9585d89">More...</a><br /></td></tr>
+<tr class="separator:ac631d4d772ab13f32a5a55a1d9585d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3db6b29c482d94eef8a43cd8b5751c0"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_x126x.html#ae3db6b29c482d94eef8a43cd8b5751c0">receive</a> (uint8_t *data, size_t len) override</td></tr>
 <tr class="memdesc:ae3db6b29c482d94eef8a43cd8b5751c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocking binary receive method. Overloads for string-based transmissions are implemented in <a class="el" href="class_physical_layer.html" title="Provides common interface for protocols that run on LoRa/FSK modules, such as RTTY or LoRaWAN....">PhysicalLayer</a>.  <a href="class_s_x126x.html#ae3db6b29c482d94eef8a43cd8b5751c0">More...</a><br /></td></tr>
 <tr class="separator:ae3db6b29c482d94eef8a43cd8b5751c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -294,6 +297,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:aff80db65e546934980feac7e6c81dd80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_x126x.html#aff80db65e546934980feac7e6c81dd80">readBit</a> (RADIOLIB_PIN_TYPE pin)</td></tr>
 <tr class="memdesc:aff80db65e546934980feac7e6c81dd80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dummy method, to ensure <a class="el" href="class_physical_layer.html" title="Provides common interface for protocols that run on LoRa/FSK modules, such as RTTY or LoRaWAN....">PhysicalLayer</a> compatibility.  <a href="class_s_x126x.html#aff80db65e546934980feac7e6c81dd80">More...</a><br /></td></tr>
 <tr class="separator:aff80db65e546934980feac7e6c81dd80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adab04cbc1125170c6ea16ca5143f3ea5"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_x126x.html#adab04cbc1125170c6ea16ca5143f3ea5">invertIQ</a> (bool invertIQ)</td></tr>
+<tr class="memdesc:adab04cbc1125170c6ea16ca5143f3ea5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables/disables Invert the LoRa I and Q signals.  <a href="class_s_x126x.html#adab04cbc1125170c6ea16ca5143f3ea5">More...</a><br /></td></tr>
+<tr class="separator:adab04cbc1125170c6ea16ca5143f3ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab139a34e03a6fd5a781cd54da21d308f"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_x126x.html#ab139a34e03a6fd5a781cd54da21d308f">transmit</a> (__FlashStringHelper *fstr, uint8_t addr=0)</td></tr>
 <tr class="memdesc:ab139a34e03a6fd5a781cd54da21d308f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arduino Flash String transmit method.  <a href="class_s_x126x.html#ab139a34e03a6fd5a781cd54da21d308f">More...</a><br /></td></tr>
 <tr class="separator:ab139a34e03a6fd5a781cd54da21d308f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -827,6 +833,32 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
+<a id="ac631d4d772ab13f32a5a55a1d9585d89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac631d4d772ab13f32a5a55a1d9585d89">&#9670;&nbsp;</a></span>holdTransmissionUntil()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SX126x::holdTransmissionUntil </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>timestampMicros</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Delays an RF transmission until a specific timestamp in microsenconds has been reached. The method has to be called before for every transmission. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timestampMicros</td><td>The timestamp in microseconds on (after) which the transmission is allowed to happen. Must not be greater further than 30 seconds from now. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="adec09cba71494bd927ad1da786606ca6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adec09cba71494bd927ad1da786606ca6">&#9670;&nbsp;</a></span>implicitHeader()</h2>
 
@@ -847,6 +879,33 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">len</td><td>Payload length in bytes.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__status__codes.html">Status Codes</a> </dd></dl>
+
+</div>
+</div>
+<a id="adab04cbc1125170c6ea16ca5143f3ea5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adab04cbc1125170c6ea16ca5143f3ea5">&#9670;&nbsp;</a></span>invertIQ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t SX126x::invertIQ </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>invertIQ</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enables/disables Invert the LoRa I and Q signals. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">invertIQ</td><td>Enable (true) or disable (false) LoRa I and Q signals.</td></tr>
   </table>
   </dd>
 </dl>

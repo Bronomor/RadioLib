@@ -54,6 +54,8 @@ var hierarchy =
     [ "RFM23", "class_r_f_m23.html", null ],
     [ "RFM98", "class_r_f_m98.html", null ],
     [ "RTTYClient", "class_r_t_t_y_client.html", null ],
+    [ "SPIClass", "class_s_p_i_class.html", null ],
+    [ "SPISettings", "class_s_p_i_settings.html", null ],
     [ "SSTVClient", "class_s_s_t_v_client.html", null ],
     [ "SSTVMode_t", "struct_s_s_t_v_mode__t.html", null ],
     [ "tone_t", "structtone__t.html", null ]

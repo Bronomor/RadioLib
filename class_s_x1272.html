@@ -179,6 +179,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a9c4ea3285922bf01cebd2c8a706d9a29 inherit pub_methods_class_s_x127x"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_x127x.html#a9c4ea3285922bf01cebd2c8a706d9a29">transmit</a> (uint8_t *data, size_t len, uint8_t addr=0) override</td></tr>
 <tr class="memdesc:a9c4ea3285922bf01cebd2c8a706d9a29 inherit pub_methods_class_s_x127x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binary transmit method. Will transmit arbitrary binary data up to 255 bytes long using LoRa or up to 63 bytes using FSK modem. For overloads to transmit Arduino String or C-string, see <a class="el" href="class_physical_layer.html#ab139a34e03a6fd5a781cd54da21d308f" title="Arduino Flash String transmit method.">PhysicalLayer::transmit</a>.  <a href="class_s_x127x.html#a9c4ea3285922bf01cebd2c8a706d9a29">More...</a><br /></td></tr>
 <tr class="separator:a9c4ea3285922bf01cebd2c8a706d9a29 inherit pub_methods_class_s_x127x"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0a93ffc59db61d617fbe2cf718a124a inherit pub_methods_class_s_x127x"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_x127x.html#ae0a93ffc59db61d617fbe2cf718a124a">holdTransmissionUntil</a> (uint32_t timestampMicros)</td></tr>
+<tr class="memdesc:ae0a93ffc59db61d617fbe2cf718a124a inherit pub_methods_class_s_x127x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delays an RF transmission until a specific timestamp in microsenconds has been reached. The method has to be called before for every transmission.  <a href="class_s_x127x.html#ae0a93ffc59db61d617fbe2cf718a124a">More...</a><br /></td></tr>
+<tr class="separator:ae0a93ffc59db61d617fbe2cf718a124a inherit pub_methods_class_s_x127x"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfe0d3f033a23ec2f3c2a407285d357c inherit pub_methods_class_s_x127x"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_x127x.html#adfe0d3f033a23ec2f3c2a407285d357c">receive</a> (uint8_t *data, size_t len) override</td></tr>
 <tr class="memdesc:adfe0d3f033a23ec2f3c2a407285d357c inherit pub_methods_class_s_x127x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binary receive method. Will attempt to receive arbitrary binary data up to 255 bytes long using LoRa or up to 63 bytes using FSK modem. For overloads to receive Arduino String, see <a class="el" href="class_physical_layer.html#afb1b090348d9091bfa3a0b5ba3d85b36" title="Arduino String receive method.">PhysicalLayer::receive</a>.  <a href="class_s_x127x.html#adfe0d3f033a23ec2f3c2a407285d357c">More...</a><br /></td></tr>
 <tr class="separator:adfe0d3f033a23ec2f3c2a407285d357c inherit pub_methods_class_s_x127x"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -688,6 +691,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">float SX1272::getRSSI </td>
@@ -697,6 +703,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets recorded signal strength indicator of the latest received packet for LoRa modem, or current RSSI level for FSK modem. </p>
@@ -707,6 +718,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Last packet RSSI for LoRa modem, or current RSSI level for FSK modem. </dd></dl>
+
+<p>Implements <a class="el" href="class_s_x127x.html#a466d0f2df178f76b481337e283bd4bee">SX127x</a>.</p>
 
 </div>
 </div>
@@ -796,6 +809,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">int16_t SX1272::setCRC </td>
@@ -815,6 +831,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Enables/disables CRC check of received packets. </p>
@@ -826,6 +847,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__status__codes.html">Status Codes</a> </dd></dl>
+
+<p>Implements <a class="el" href="class_s_x127x.html#ae653f4e25d498f56199c1904abf3ea7b">SX127x</a>.</p>
 
 </div>
 </div>

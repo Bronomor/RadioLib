@@ -134,6 +134,9 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="memitem:a9c4ea3285922bf01cebd2c8a706d9a29"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_x127x.html#a9c4ea3285922bf01cebd2c8a706d9a29">transmit</a> (uint8_t *data, size_t len, uint8_t addr=0) override</td></tr>
 <tr class="memdesc:a9c4ea3285922bf01cebd2c8a706d9a29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binary transmit method. Will transmit arbitrary binary data up to 255 bytes long using LoRa or up to 63 bytes using FSK modem. For overloads to transmit Arduino String or C-string, see <a class="el" href="class_physical_layer.html#ab139a34e03a6fd5a781cd54da21d308f" title="Arduino Flash String transmit method.">PhysicalLayer::transmit</a>.  <a href="class_s_x127x.html#a9c4ea3285922bf01cebd2c8a706d9a29">More...</a><br /></td></tr>
 <tr class="separator:a9c4ea3285922bf01cebd2c8a706d9a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0a93ffc59db61d617fbe2cf718a124a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_x127x.html#ae0a93ffc59db61d617fbe2cf718a124a">holdTransmissionUntil</a> (uint32_t timestampMicros)</td></tr>
+<tr class="memdesc:ae0a93ffc59db61d617fbe2cf718a124a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delays an RF transmission until a specific timestamp in microsenconds has been reached. The method has to be called before for every transmission.  <a href="class_s_x127x.html#ae0a93ffc59db61d617fbe2cf718a124a">More...</a><br /></td></tr>
+<tr class="separator:ae0a93ffc59db61d617fbe2cf718a124a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfe0d3f033a23ec2f3c2a407285d357c"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_x127x.html#adfe0d3f033a23ec2f3c2a407285d357c">receive</a> (uint8_t *data, size_t len) override</td></tr>
 <tr class="memdesc:adfe0d3f033a23ec2f3c2a407285d357c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binary receive method. Will attempt to receive arbitrary binary data up to 255 bytes long using LoRa or up to 63 bytes using FSK modem. For overloads to receive Arduino String, see <a class="el" href="class_physical_layer.html#afb1b090348d9091bfa3a0b5ba3d85b36" title="Arduino String receive method.">PhysicalLayer::receive</a>.  <a href="class_s_x127x.html#adfe0d3f033a23ec2f3c2a407285d357c">More...</a><br /></td></tr>
 <tr class="separator:adfe0d3f033a23ec2f3c2a407285d357c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -199,6 +202,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:abc5069b39dc31b637ee561d5745e1deb"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_x127x.html#abc5069b39dc31b637ee561d5745e1deb">getSNR</a> ()</td></tr>
 <tr class="memdesc:abc5069b39dc31b637ee561d5745e1deb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets signal-to-noise ratio of the latest received packet. Only available in LoRa mode.  <a href="class_s_x127x.html#abc5069b39dc31b637ee561d5745e1deb">More...</a><br /></td></tr>
 <tr class="separator:abc5069b39dc31b637ee561d5745e1deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a466d0f2df178f76b481337e283bd4bee"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_x127x.html#a466d0f2df178f76b481337e283bd4bee">getRSSI</a> (bool skipReceive)=0</td></tr>
+<tr class="memdesc:a466d0f2df178f76b481337e283bd4bee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets recorded signal strength indicator of the latest received packet for LoRa modem, or current RSSI level for FSK modem.  <a href="class_s_x127x.html#a466d0f2df178f76b481337e283bd4bee">More...</a><br /></td></tr>
+<tr class="separator:a466d0f2df178f76b481337e283bd4bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae653f4e25d498f56199c1904abf3ea7b"><td class="memItemLeft" align="right" valign="top">virtual int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_x127x.html#ae653f4e25d498f56199c1904abf3ea7b">setCRC</a> (bool enable, bool mode=false)=0</td></tr>
+<tr class="memdesc:ae653f4e25d498f56199c1904abf3ea7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables/disables CRC check of received packets.  <a href="class_s_x127x.html#ae653f4e25d498f56199c1904abf3ea7b">More...</a><br /></td></tr>
+<tr class="separator:ae653f4e25d498f56199c1904abf3ea7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc25b685de0859b799488bf7729350b6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_x127x.html#adc25b685de0859b799488bf7729350b6">getDataRate</a> () const</td></tr>
 <tr class="memdesc:adc25b685de0859b799488bf7729350b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get data rate of the latest transmitted packet.  <a href="class_s_x127x.html#adc25b685de0859b799488bf7729350b6">More...</a><br /></td></tr>
 <tr class="separator:adc25b685de0859b799488bf7729350b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -825,6 +834,43 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
+<a id="a466d0f2df178f76b481337e283bd4bee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a466d0f2df178f76b481337e283bd4bee">&#9670;&nbsp;</a></span>getRSSI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual float SX127x::getRSSI </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>skipReceive</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets recorded signal strength indicator of the latest received packet for LoRa modem, or current RSSI level for FSK modem. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">skipReceive</td><td>Set to true to skip putting radio in receive mode for the RSSI measurement in FKS/OOK mode.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Last packet RSSI for LoRa modem, or current RSSI level for FSK modem. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_s_x1278.html#ae52d84fa301309a4a4294312571fc3b8">SX1278</a>, and <a class="el" href="class_s_x1272.html#a0d8e68cf913422535dc43cbdf73a3f10">SX1272</a>.</p>
+
+</div>
+</div>
 <a id="abc5069b39dc31b637ee561d5745e1deb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abc5069b39dc31b637ee561d5745e1deb">&#9670;&nbsp;</a></span>getSNR()</h2>
 
@@ -862,6 +908,32 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Reads uncalibrated temperature value. This function will change operating mode and should not be called during Tx, Rx or CAD. </p>
 <dl class="section return"><dt>Returns</dt><dd>Uncalibrated temperature sensor reading. </dd></dl>
+
+</div>
+</div>
+<a id="ae0a93ffc59db61d617fbe2cf718a124a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0a93ffc59db61d617fbe2cf718a124a">&#9670;&nbsp;</a></span>holdTransmissionUntil()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SX127x::holdTransmissionUntil </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>timestampMicros</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Delays an RF transmission until a specific timestamp in microsenconds has been reached. The method has to be called before for every transmission. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timestampMicros</td><td>The timestamp in microseconds on (after) which the transmission is allowed to happen. Must not be greater further than 30 seconds from now. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1353,6 +1425,54 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__status__codes.html">Status Codes</a> </dd></dl>
+
+</div>
+</div>
+<a id="ae653f4e25d498f56199c1904abf3ea7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae653f4e25d498f56199c1904abf3ea7b">&#9670;&nbsp;</a></span>setCRC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int16_t SX127x::setCRC </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>mode</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enables/disables CRC check of received packets. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enable</td><td>Enable (true) or disable (false) CRC.</td></tr>
+    <tr><td class="paramname">mode</td><td>Set CRC mode to SX127X_CRC_WHITENING_TYPE_CCITT for CCITT, polynomial X16 + X12 + X5 + 1 (false) or SX127X_CRC_WHITENING_TYPE_IBM for IBM, polynomial X16 + X15 + X2 + 1 (true). Only valid in FSK mode.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__status__codes.html">Status Codes</a> </dd></dl>
+
+<p>Implemented in <a class="el" href="class_s_x1278.html#ac0be7586b8e40355bbd29d78ae9941d1">SX1278</a>, and <a class="el" href="class_s_x1272.html#abd912314a977f92c464d36d862329ffc">SX1272</a>.</p>
 
 </div>
 </div>
