@@ -17,7 +17,6 @@
   int wiringPiSetup();
   int wiringPiSPISetup(int channel, int speed);
   int wiringPiSPISetupMode(int channel, int speed, int mode);
-  int wiringPiSPISetupModePort(int channel, int speed, int mode, int port);
   int wiringPiSPIDataRW(int channel, unsigned char *data, int len);
   unsigned int millis();
   unsigned int micros();
@@ -60,21 +59,18 @@ class SPISettings {
   int mode;
   bool isLSBmode;
   int channel;
-  int port;
 
   static const uint8_t bitReverseTable256[256];
 
   friend class SPIClass;
 
 public:
-
-  SPISettings(uint32_t clock, uint8_t bitOrder, uint8_t dataMode, int spiChannel, int spiPort) //nonstandard, but full ctor
+  SPISettings(uint32_t clock, uint8_t bitOrder, uint8_t dataMode, int spiChannel) //nonstandard, but full ctor
   {
     speed = clock;
     isLSBmode = (bitOrder == LSBFIRST);
     mode = dataMode;
     channel = spiChannel;
-    port = spiPort;
   }
 
   SPISettings(uint32_t clock, uint8_t bitOrder, uint8_t dataMode)
@@ -83,7 +79,6 @@ public:
     isLSBmode = (bitOrder == LSBFIRST);
     mode = dataMode;
     channel = 0;
-    port = 1;
   }
 
   SPISettings()
@@ -92,7 +87,6 @@ public:
     mode = SPI_MODE0;
     isLSBmode = false;
     channel = 0;
-    port = 1;
   }
 
   inline uint8_t prepareByte(uint8_t b) {
@@ -123,7 +117,7 @@ public:
       if (SPIClass::spiDeviceFp != -1) {
         close(SPIClass::spiDeviceFp);
       }
-      SPIClass::spiDeviceFp = wiringPiSPISetupModePort(settings.channel, settings.speed, settings.mode, settings.port);
+      SPIClass::spiDeviceFp = wiringPiSPISetupMode(settings.channel, settings.speed, settings.mode);
       if (SPIClass::spiDeviceFp == -1) {
         initialized = 0;
       }

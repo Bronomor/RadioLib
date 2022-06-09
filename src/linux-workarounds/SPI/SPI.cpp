@@ -43,7 +43,7 @@ SPISettings SPIClass::settings;
 void SPIClass::begin()
 {
   if (SPIClass::spiDeviceFp == -1) {
-    SPIClass::spiDeviceFp = wiringPiSPISetupModePort(settings.channel, settings.speed, settings.mode, settings.port);
+    SPIClass::spiDeviceFp = wiringPiSPISetupMode(settings.channel, settings.speed, settings.mode);
   }
 }
 
